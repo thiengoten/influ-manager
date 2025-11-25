@@ -1,4 +1,5 @@
 "use client"
+"use client"
 
 import {
   BookOpen,
@@ -27,7 +28,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { UserData } from "@/lib/types"
+import { UserData } from "@/types/user"
 
 const data = {
   user: {
