@@ -46,3 +46,5 @@ CLAUDE.md
 # Sentry Config File
 .env.sentry-build-plugin
 /screenshots
+.claude
+.mcp.json
