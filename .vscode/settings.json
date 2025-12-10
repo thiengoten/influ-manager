@@ -13,4 +13,16 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
+  "cSpell.words": [
+    "oklch",
+    "shadcn",
+    "tailwindcss",
+    "radixui",
+    "typescript",
+    "javascript",
+    "html",
+    "css",
+    "json",
+    "supabase",
+  ]
 }

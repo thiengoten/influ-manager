@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 .cursor
+CLAUDE.md
+/Docs
+# Sentry Config File
+.env.sentry-build-plugin
+/screenshots

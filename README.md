@@ -31,6 +31,7 @@ Year-1 Goal → $50k MRR (≈ 600–800 paying users)
 
 ## MVP Feature List (4–6 Week Launch Version)
 
+<<<<<<< ours
 | Priority | Feature                       | Description                                                               | Tech Notes                            |
 | -------- | ----------------------------- | ------------------------------------------------------------------------- | ------------------------------------- |
 | 1        | User Auth & Onboarding        | Email/password + magic link + beautiful onboarding flow                   | NextAuth.js + Supabase Auth           |
@@ -73,3 +74,38 @@ Year-1 Goal → $50k MRR (≈ 600–800 paying users)
 - Growth: Content on “How I built my Personal Brand OS” + affiliate program
 
 This is honestly one of the highest-probability $10k–$100k MRR indie SaaS ideas right now.
+||||||| ancestor
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+=======
+| Priority | Feature                       | Description                                                               | Tech Notes                            |
+| -------- | ----------------------------- | ------------------------------------------------------------------------- | ------------------------------------- |
+| 1        | User Auth & Onboarding        | Email/password + magic link + beautiful onboarding flow                   | NextAuth.js + Supabase Auth           |
+| 2        | Connect Platforms (OAuth)     | Twitter/X, Instagram, YouTube, TikTok, LinkedIn, Substack                 | OAuth2 + store tokens securely        |
+| 3        | Unified Analytics Dashboard   | Total followers, growth chart (30d/90d), engagement rate, revenue summary | Recharts / Tremor + Server Components |
+| 4        | Content Calendar              | See all published & scheduled posts across platforms in one calendar      | FullCalendar.js or custom grid        |
+| 5        | Top Performing Content        | Auto-ranked list of best posts/videos by platform + combined score        | Server Actions to fetch & rank        |
+| 6        | Revenue Tracker               | Connect Stripe, Gumroad, Patreon → total earnings chart                   | Webhooks + manual API keys            |
+| 7        | Daily Email Digest            | “Here’s how your brand grew yesterday”                                    | Resend + Cron job                     |
+| 8        | Beautiful Landing Page + Blog | SEO-optimized marketing site (built in same Next.js app)                  | ISR + MDX blog                        |
+| 9        | Billing                       | Stripe Checkout + customer portal                                         | Stripe + Supabase                     |
+
+## Tech Stack (2025 Best Practices)
+
+- Framework: Next.js 16 (App Router + React Server Components)
+- Database: Supabase Postgres
+- Auth: NextAuth.js or Supabase Auth
+- UI: shadcn/ui + Tailwind CSS + Tremor/Recharts
+- Payments: Stripe
+- Emails: Resend
+- Deployment: Vercel (free tier until $20k MRR)
+- Analytics: PostHog or Umami (self-hosted)
+
+## Launch Plan
+
+- Week 1–4: Build MVP
+- Week 5: Beta with 50 creators (free lifetime for feedback)
+- Week 6: Launch on Product Hunt + Indie Hackers + Twitter
+- Growth: Content on “How I built my Personal Brand OS” + affiliate program
+
+This is honestly one of the highest-probability $10k–$100k MRR indie SaaS ideas right now.
+>>>>>>> theirs

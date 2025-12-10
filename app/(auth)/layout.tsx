@@ -7,3 +7,4 @@ export default function AuthLayout({
     <div className='flex h-screen items-center justify-center'>{children}</div>
   )
 }
+
