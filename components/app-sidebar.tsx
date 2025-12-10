@@ -12,6 +12,7 @@ import {
   Send,
   Settings2,
   SquareTerminal,
+  Video,
 } from "lucide-react"
 import * as React from "react"
 
@@ -38,10 +39,29 @@ const data = {
   },
   navMain: [
     {
+      title: "Content",
+      url: "#",
+      icon: Video,
+      isActive: true,
+      items: [
+        {
+          title: "Upload Video",
+          url: "/dashboard/upload",
+        },
+        {
+          title: "My Videos",
+          url: "#",
+        },
+        {
+          title: "Scheduled",
+          url: "#",
+        },
+      ],
+    },
+    {
       title: "Playground",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
       items: [
         {
           title: "History",
@@ -107,6 +127,10 @@ const data = {
         {
           title: "General",
           url: "#",
+        },
+        {
+          title: "Integrations",
+          url: "/dashboard/integrations",
         },
         {
           title: "Team",

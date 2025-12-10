@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Summary: Personal Brand OS
 
-## Getting Started
+**A Single Source of Truth Dashboard for Creators & Personal Brands**  
+Launch-ready MVP in 4–6 weeks with Next.js 16
 
-First, run the development server:
+## Project Vision
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Give every creator (YouTubers, TikTokers, LinkedIn influencers, newsletter writers, indie hackers) one private, beautiful dashboard that automatically pulls and unifies data from all their platforms — so they finally know exactly how their personal brand is performing and where to focus next.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+No more platform-hopping. No more manual spreadsheets. Just one source of truth.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Target Users (2025–2026)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Creators earning $1k–$50k/mo
+- Solopreneurs & personal brands with 10k–500k total followers
+- People already paying for Notion, ConvertKit, Later, ChartMogul, etc.
 
-## Learn More
+## Core Value Proposition
 
-To learn more about Next.js, take a look at the following resources:
+“See your entire creator business in one glance — followers, revenue, best content, upcoming posts — automatically updated every day.”
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pricing (Planned)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Tier        | Price   | Limits                           | Best For                  |
+| ----------- | ------- | -------------------------------- | ------------------------- |
+| Starter     | $0/mo   | 5 platforms, 1 user              | Early creators            |
+| Pro         | $12/mo  | 15 platforms, unlimited history  | Full-time creators        |
+| Team/Agency | $100/mo | Unlimited platforms + team seats | Managers & small agencies |
 
-## Deploy on Vercel
+Year-1 Goal → $50k MRR (≈ 600–800 paying users)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## MVP Feature List (4–6 Week Launch Version)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Priority | Feature                       | Description                                                               | Tech Notes                            |
+| -------- | ----------------------------- | ------------------------------------------------------------------------- | ------------------------------------- |
+| 1        | User Auth & Onboarding        | Email/password + magic link + beautiful onboarding flow                   | NextAuth.js + Supabase Auth           |
+| 2        | Connect Platforms (OAuth)     | Twitter/X, Instagram, YouTube, TikTok, LinkedIn, Substack                 | OAuth2 + store tokens securely        |
+| 3        | Unified Analytics Dashboard   | Total followers, growth chart (30d/90d), engagement rate, revenue summary | Recharts / Tremor + Server Components |
+| 4        | Content Calendar              | See all published & scheduled posts across platforms in one calendar      | FullCalendar.js or custom grid        |
+| 5        | Top Performing Content        | Auto-ranked list of best posts/videos by platform + combined score        | Server Actions to fetch & rank        |
+| 6        | Revenue Tracker               | Connect Stripe, Gumroad, Patreon → total earnings chart                   | Webhooks + manual API keys            |
+| 7        | Daily Email Digest            | “Here’s how your brand grew yesterday”                                    | Resend + Cron job                     |
+| 8        | Beautiful Landing Page + Blog | SEO-optimized marketing site (built in same Next.js app)                  | ISR + MDX blog                        |
+| 9        | Billing                       | Stripe Checkout + customer portal                                         | Stripe + Supabase                     |
+
+<!-- ### Phase 2 – Post-Launch (Month 2–3)
+
+| Feature                          | Description                                 |
+| -------------------------------- | ------------------------------------------- |
+| Idea Inbox & Content Repurposing | Save tweets/ideas → turn into threads/posts |
+| Audience Insights                | Demographics, best posting times            |
+| AI Recommendations               | “Double down on short-form video on TikTok” |
+| Sponsor/Deal CRM                 | Track incoming brand deals & deadlines      |
+| Mobile App (PWA)                 | Fully offline-capable dashboard             |
+| More Integrations                | Lemon Squeezy, Beehiiv, ConvertKit, Threads | -->
+
+## Tech Stack (2025 Best Practices)
+
+- Framework: Next.js 16 (App Router + React Server Components)
+- Database: Supabase Postgres
+- Auth: NextAuth.js or Supabase Auth
+- UI: shadcn/ui + Tailwind CSS + Tremor/Recharts
+- Payments: Stripe
+- Emails: Resend
+- Deployment: Vercel (free tier until $20k MRR)
+- Analytics: PostHog or Umami (self-hosted)
+
+## Launch Plan
+
+- Week 1–4: Build MVP
+- Week 5: Beta with 50 creators (free lifetime for feedback)
+- Week 6: Launch on Product Hunt + Indie Hackers + Twitter
+- Growth: Content on “How I built my Personal Brand OS” + affiliate program
+
+This is honestly one of the highest-probability $10k–$100k MRR indie SaaS ideas right now.

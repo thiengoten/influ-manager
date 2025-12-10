@@ -12,7 +12,8 @@ import {
   User,
   Users,
 } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/router"
+import posthog from "posthog-js"
 import * as React from "react"
 
 import { completeOnboarding } from "@/app/onboarding/_actions"
@@ -95,18 +96,49 @@ export default function OnboardingPage() {
   }
 
   const nextStep = async () => {
-    if (step === "welcome") setStep("role")
-    else if (step === "role") setStep("goals")
-    else if (step === "goals") setStep("done")
+    if (step === "welcome") {
+      posthog.capture("onboarding_started", {
+        step: "welcome",
+      })
+      setStep("role")
+    } else if (step === "role") {
+      posthog.capture("onboarding_role_selected", {
+        role: role,
+        step: "role",
+      })
+      setStep("goals")
+    } else if (step === "goals") {
+      posthog.capture("onboarding_goals_selected", {
+        goals: goals,
+        goals_count: goals.length,
+        step: "goals",
+      })
+      setStep("done")
+    }
   }
 
   const handleCompleteOnboarding = async () => {
     const res = await completeOnboarding()
     if (res?.message) {
+      // Identify user with PostHog when onboarding is complete
+      if (user?.id) {
+        posthog.identify(user.id, {
+          email: user.primaryEmailAddress?.emailAddress,
+          name: user.fullName,
+          role: role,
+          goals: goals,
+        })
+      }
+      posthog.capture("onboarding_completed", {
+        role: role,
+        goals: goals,
+        goals_count: goals.length,
+      })
       await user?.reload()
       router.push("/dashboard")
     }
     if (res?.error) {
+      posthog.captureException(new Error(res.error))
       throw new Error(res.error)
     }
   }

@@ -1,6 +1,8 @@
 "use client"
 import { useSession, useUser } from "@clerk/nextjs"
+import * as Sentry from "@sentry/nextjs"
 import { createClient } from "@supabase/supabase-js"
+import posthog from "posthog-js"
 import { useEffect, useState } from "react"
 
 interface Task {
@@ -17,6 +19,7 @@ export default function Home() {
   // The `useSession()` hook is used to get the Clerk session object
   // The session object is used to get the Clerk session token
   const { session } = useSession()
+  Sentry.logger.info("User triggered test log", { log_source: "sentry_test" })
 
   // Create a custom Supabase client that injects the Clerk session token into the request headers
   function createClerkSupabaseClient() {
@@ -52,24 +55,28 @@ export default function Home() {
   async function createTask(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     // Insert task into the "tasks" database
-    await client.from("tasks").insert({
+    const { error } = await client.from("tasks").insert({
       name,
     })
+    if (!error) {
+      posthog.capture("task_created", {
+        task_name: name,
+        user_id: user?.id,
+      })
+    } else {
+      posthog.captureException(error)
+    }
     window.location.reload()
   }
 
   return (
     <div>
       <h1>Tasks</h1>
-
       {loading && <p>Loading...</p>}
-
       {!loading &&
         tasks.length > 0 &&
         tasks.map((task: Task) => <p key={task.id}>{task.name}</p>)}
-
       {!loading && tasks.length === 0 && <p>No tasks found</p>}
-
       <form onSubmit={createTask}>
         <input
           autoFocus

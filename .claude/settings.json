@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [],
+    "ask": [
+      "mcp__*"
+    ],
+    "deny": [
+      "Bash(curl:*)",
+      "Read(./secrets/**)"
+    ],
+    "defaultMode": "default"
+  },
+  "alwaysThinkingEnabled": false
+}

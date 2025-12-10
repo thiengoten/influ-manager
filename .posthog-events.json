@@ -1,0 +1,62 @@
+[
+  {
+    "event": "onboarding_started",
+    "description": "User clicked 'Get Started' on the welcome step of onboarding, beginning their journey through the onboarding flow",
+    "file_path": "app/onboarding/page.tsx"
+  },
+  {
+    "event": "onboarding_role_selected",
+    "description": "User selected their role (creator, influencer, founder, or other) during onboarding, providing key user segmentation data",
+    "file_path": "app/onboarding/page.tsx"
+  },
+  {
+    "event": "onboarding_goals_selected",
+    "description": "User selected their goals (increase followers, launch product, build community, get sponsor deal) during onboarding",
+    "file_path": "app/onboarding/page.tsx"
+  },
+  {
+    "event": "onboarding_completed",
+    "description": "User completed the entire onboarding flow and navigated to dashboard - key conversion event",
+    "file_path": "app/onboarding/page.tsx"
+  },
+  {
+    "event": "task_created",
+    "description": "User created a new task in the home page task list",
+    "file_path": "app/page.tsx"
+  },
+  {
+    "event": "youtube_connect_started",
+    "description": "User initiated YouTube account connection from the integrations page",
+    "file_path": "app/dashboard/integrations/page.tsx"
+  },
+  {
+    "event": "youtube_disconnected",
+    "description": "User disconnected their YouTube account from the integrations page - potential churn signal",
+    "file_path": "app/dashboard/integrations/page.tsx"
+  },
+  {
+    "event": "video_upload_started",
+    "description": "User selected a video file for upload in the multi-platform publishing workflow",
+    "file_path": "app/dashboard/upload/page.tsx"
+  },
+  {
+    "event": "video_upload_removed",
+    "description": "User removed/cancelled a video upload before publishing",
+    "file_path": "app/dashboard/upload/page.tsx"
+  },
+  {
+    "event": "platform_selected",
+    "description": "User selected or deselected a platform (YouTube, TikTok, Facebook, LinkedIn) for video publishing",
+    "file_path": "app/dashboard/upload/page.tsx"
+  },
+  {
+    "event": "video_published",
+    "description": "User clicked 'Publish Now' to publish video to selected platforms - key conversion event",
+    "file_path": "app/dashboard/upload/page.tsx"
+  },
+  {
+    "event": "draft_saved",
+    "description": "User saved their video upload as a draft instead of publishing immediately",
+    "file_path": "app/dashboard/upload/page.tsx"
+  }
+]
